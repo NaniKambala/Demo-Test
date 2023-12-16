@@ -1,0 +1,14 @@
+{% extends 'login.html' %}
+{% block main %}
+<form action="{% url 'clientsignupurl' %}" method="POST">
+    {% csrf_token %}
+    Client Name : <input type="text" name="uname"><br><br>
+    Email : <input type="email" name="mail"><br><br>
+    Password : <input type="password" name="pwd"><br><br>
+    Confirm Password: <input type="password" name="pwd1"><br><br>
+    <input type="submit" value="Create User">
+</form>
+{% for msg in messages %}
+<h2>{{msg}}</h2>
+{% endfor %}
+{% endblock %}

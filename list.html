@@ -1,0 +1,12 @@
+{% extends 'login.html' %}
+{% block main %}
+{% for fle in files %}
+<div>
+    <h3>{{fle.fileid}}</h3>
+    <h3>{{fle.Name}}</h3>
+    <h3>{{fle.file}}</h3>
+    <a href="{% url 'download_file' file_id=file.id %}">Download File</a>
+
+</div>
+{% endfor %}
+{% endblock %}
